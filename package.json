@@ -17,5 +17,7 @@
     "url": "https://github.com/VictorCob/pattern-string-searching/issues"
   },
   "homepage": "https://github.com/VictorCob/pattern-string-searching#readme",
-  "devDependencies": {}
+  "devDependencies": {
+    "typescript": "^3.4.1"
+  }
 }
