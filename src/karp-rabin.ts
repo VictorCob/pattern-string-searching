@@ -1,16 +1,17 @@
 function karpRabin(text: string, pattern: string) {
     return new Promise((resolve, reject) => {
-        let m = pattern.length;
-        let n = text.length;
+        const m = pattern.length;
+        const n = text.length;
         let p = 0;
         let t = 0;
         let h = 1;
-        let d = 256;
-        let q = 101;
+        const d = 256;
+        const q = 101;
         let j = 0;
 
-        for (let i = 0; i < m - 1; i++)
+        for (let i = 0; i < m - 1; i++) {
             h = (h * d) % q;
+        }
 
         for (let i = 0; i < m; i++) {
             p = (d * p + pattern.charCodeAt(i)) % q;
@@ -18,18 +19,21 @@ function karpRabin(text: string, pattern: string) {
         }
 
         for (let i = 0; i <= n - m; i++) {
-            if (p == t) {
+            if (p === t) {
                 for (j = 0; j < m; j++) {
-                    if (text.charCodeAt(i + j) != pattern.charCodeAt(j))
+                    if (text.charCodeAt(i + j) !== pattern.charCodeAt(j)) {
                         break;
+                    }
                 }
-                if (j == m)
+                if (j === m) {
                     resolve(i);
+                }
             }
             if (i < n - m) {
                 t = (d * (t - text.charCodeAt(i) * h) + text.charCodeAt(i + m)) % q;
-                if (t < 0)
+                if (t < 0) {
                     t = (t + q);
+                }
             }
         }
         resolve(-1);

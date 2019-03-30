@@ -1,4 +1,4 @@
-function binSearch(sortedArray:Array<any>, element:any) {
+function binSearch(sortedArray:[], element:any) {
     return new Promise((resolve,reject)=>{
         let start = 0;
         let end = sortedArray.length - 1;

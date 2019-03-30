@@ -1,6 +1,6 @@
 import { bfSearch } from './bf-search';
-import { karpRabin } from './karp-rabin';
 import { binSearch } from './binary-search';
+import { karpRabin } from './karp-rabin';
 import { shiftOr } from './shift-or';
 
 
@@ -13,7 +13,7 @@ async function karpRabinSearch(text: string, pattern: string) {
     return await karpRabin(text, pattern);
 }
 
-async function binarySearch(sortedArray: Array<any>, element: any) {
+async function binarySearch(sortedArray:[], element: any) {
     return await binSearch(sortedArray, element);
 }
 
