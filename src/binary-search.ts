@@ -1,10 +1,10 @@
-export = function binarySearch(arr:Array<any>, elem:number) {
+function binSearch(sortedArray:Array<any>, element:any) {
     return new Promise((resolve,reject)=>{
         let start = 0;
-        let end = arr.length - 1;
+        let end = sortedArray.length - 1;
         let middle = Math.floor((start + end) / 2);
-        while (arr[middle] !== elem && start <= end) {
-            if (elem < arr[middle]) {
+        while (sortedArray[middle] !== element && start <= end) {
+            if (element < sortedArray[middle]) {
                 end = middle - 1;
             }
             else {
@@ -12,10 +12,12 @@ export = function binarySearch(arr:Array<any>, elem:number) {
             }
             middle = Math.floor((start + end) / 2);
         }
-        if (arr[middle] === elem){
+        if (sortedArray[middle] === element){
             resolve(middle);
         }else{
             resolve(-1);
         }
     })
 }
+
+export {binSearch}

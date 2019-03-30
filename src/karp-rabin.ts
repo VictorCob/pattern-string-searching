@@ -1,4 +1,4 @@
-function karpRabin(text: String, pattern: String) {
+function karpRabin(text: string, pattern: string) {
     return new Promise((resolve, reject) => {
         let m = pattern.length;
         let n = text.length;

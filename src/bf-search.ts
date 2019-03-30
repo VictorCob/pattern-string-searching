@@ -1,4 +1,4 @@
-function bfSearch(text: String, pattern: String): Promise<number> {
+function bfSearch(text: string, pattern: string): Promise<number> {
     return new Promise((resolve, reject) => {
         let n = text.length;
         let m = pattern.length;
