@@ -1,5 +1,3 @@
-
-
 function shiftOr(text: string, pattern: string) {
   return new Promise((resolve, reject) => {
     const pos = bitap_search(text, pattern);
